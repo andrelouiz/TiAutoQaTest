@@ -1,0 +1,3 @@
+﻿using TechTask;
+
+Start.Menu();
