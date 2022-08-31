@@ -1,4 +1,6 @@
 using System.Collections;
+using System;
+using static TechTask.Start;
 
 namespace TechTask;
 
@@ -11,29 +13,13 @@ public class Perimeter
     public double dotCx { get; set; }
     public double dotCy { get; set; }
 
-    public Perimeter(double dotAx, double dotAy , double dotBx, double dotBy, double dotCx, double dotCy)
-    {
-        this.dotAx = dotAx;
-        this.dotAy = dotAy;
-        this.dotBx = dotBx;
-        this.dotBy = dotBy;
-        this.dotCx = dotCx;
-        this.dotCy = dotCy;
-        
-        double A = dotAx + dotAy;
-        double B = dotBx + dotBy;
-        double C = dotCx + dotCy;
-        
-        Console.WriteLine($"Dot A {0}, Dot B {1}, Dot C {2}.", A, B, C);
-    }
-
     public void Calculator()
     {
         double A = dotAx + dotAy;
         double B = dotBx + dotBy;
         double C = dotCx + dotCy;
         
-        Console.WriteLine($"Dot A {0}, Dot B {1}, Dot C {2}.", A, B, C);
+        Console.WriteLine($"Dot A {A}, Dot B {B}, Dot C {C}.");
 
     }
     

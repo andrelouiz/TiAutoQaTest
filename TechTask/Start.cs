@@ -1,3 +1,5 @@
+using static TechTask.Perimeter;
+
 namespace TechTask;
 public class Start
 {
@@ -24,8 +26,10 @@ public class Start
 
         Console.WriteLine("Enter the coordinate of y of dot C:");
         perimeter.dotCy = Double.Parse(Console.ReadLine());
+        
+        perimeter.Calculator();
 
-      
-       
+        Console.ReadKey();
+
     }
 }
