@@ -27,7 +27,7 @@ public class Start
         Console.WriteLine("Enter the coordinate of y of dot C:");
         perimeter.dotCy = Double.Parse(Console.ReadLine());
         
-        perimeter.Calculator();
+        perimeter.LenghtCalc();
 
         Console.ReadKey();
 
