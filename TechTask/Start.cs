@@ -3,7 +3,7 @@ public class Start
 {
     public static void Menu()
     {
-        Console.WriteLine("Triangle perimeter calculator");
+        Console.WriteLine("Triangle perimeter calculator\n");
 
         Triangle triangle = new Triangle();
         

@@ -15,6 +15,7 @@ public class Triangle
     
     public void LenghtCalc()
     {
+        //Calculates the sides of the triangles and store the value in the variables
         double xAB = dotAx - dotBx;
         double yAB = dotAy - dotBy;
         double lenghtAB = Math.Sqrt((xAB * xAB) + (yAB * yAB));
@@ -29,6 +30,7 @@ public class Triangle
 
         Console.WriteLine($"\n Lenght AB = {lenghtAB}\n Lenght BC = {lenghtBC}\n Lenght AC = {lenghtAC}\n ");
 
+        //Compares the lenght of the sides to see if they are equal
         if (lenghtAB == lenghtBC & lenghtBC == lenghtAC)
         {
             Console.WriteLine("Triangle IS 'Equilateral'");
@@ -42,19 +44,46 @@ public class Triangle
             Console.WriteLine("Triangle IS 'Scalene'");
         }
 
-        if (lenghtAB == lenghtBC + lenghtAC || lenghtBC == lenghtAC + lenghtAB || lenghtAC == lenghtAB + lenghtBC)
+        //Checks if the triangle is right using Pythagoras theorem a2 + b2 = c2
+        if (lenghtAB >= lenghtBC || lenghtAB >= lenghtAC)
         {
-            Console.WriteLine("Triangle IS 'Right'");
+            if (lenghtBC + lenghtAC == lenghtAB)
+            {
+                Console.WriteLine("Triangle IS 'Right'");
+            }
+            else
+            {
+                Console.WriteLine("Triangle IS NOT 'Right'");
+            }
         }
-        else
+        else if (lenghtBC >= lenghtAB || lenghtBC >= lenghtAC) {
+            if (lenghtAB + lenghtAC == lenghtBC)
+            {
+                Console.WriteLine("Triangle IS 'Right'");
+            }
+            else
+            {
+                Console.WriteLine("Triangle IS NOT 'Right'");
+            }
+        }
+        else if (lenghtAC >= lenghtAB || lenghtAC >= lenghtBC)
         {
-            Console.WriteLine("Triangle IS NOT 'Right'");
+            if (lenghtAB + lenghtBC == lenghtAC)
+            {
+                Console.WriteLine("Triangle IS 'Right Angled'");
+            }
+            else
+            {
+                Console.WriteLine("Triangle IS NOT 'Right Angled'");
+            }
         }
 
+
+        //Calculates the perimeter of the triangle
         double perimeter = lenghtAB + lenghtAC + lenghtBC;
-
         Console.WriteLine($"\nPerimeter: '{perimeter}'");
 
+        //For loop to print out even numbers from 0 up to the perimeter of the triangle
         Console.WriteLine("\nParity of the numbers in rage from 0 to triangle perimeter:");
         for (int i = 0; i < perimeter; i++)
         {
@@ -65,8 +94,6 @@ public class Triangle
         }
 
     }
-
-   
 
 }
 
