@@ -4,7 +4,7 @@ using static TechTask.Start;
 
 namespace TechTask;
 
-public class Perimeter
+public class Triangle
 {
     public double dotAx { get; set; }
     public double dotAy { get; set; }
@@ -17,33 +17,56 @@ public class Perimeter
     {
         double xAB = dotAx - dotBx;
         double yAB = dotAy - dotBy;
-        double lenghtA = Math.Sqrt((xAB * xAB) + (yAB * yAB));
+        double lenghtAB = Math.Sqrt((xAB * xAB) + (yAB * yAB));
        
         double xBC = dotBx - dotCx;
-        double yBC = dotBy - dotBy;
-        double lenghtB = Math.Sqrt((xBC * xBC) + (yBC * yBC));
+        double yBC = dotBy - dotCy;
+        double lenghtBC = Math.Sqrt((xBC * xBC) + (yBC * yBC));
        
         double xAC = dotAx - dotCx;
         double yAC = dotAy - dotCy;
-        double lenghtC = Math.Sqrt((xAC * xAC) + (yAC * yAC));
-       
-        Console.WriteLine($"Lenght A = {lenghtA}\n Lenght B = {lenghtB}\n Lenght C = {lenghtC}\n ");
+        double lenghtAC = Math.Sqrt((xAC * xAC) + (yAC * yAC));
+
+        Console.WriteLine($"\n Lenght AB = {lenghtAB}\n Lenght BC = {lenghtBC}\n Lenght AC = {lenghtAC}\n ");
+
+        if (lenghtAB == lenghtBC & lenghtBC == lenghtAC)
+        {
+            Console.WriteLine("Triangle IS 'Equilateral'");
+        }
+        else if (lenghtAB == lenghtBC || lenghtBC == lenghtAC || lenghtAB == lenghtAC)
+        {
+            Console.WriteLine("\nTriangle IS NOT 'Equilateral'. \nTriangle IS 'Isoceles'");
+        }
+        else
+        {
+            Console.WriteLine("Triangle IS 'Scalene'");
+        }
+
+        if (lenghtAB == lenghtBC + lenghtAC || lenghtBC == lenghtAC + lenghtAB || lenghtAC == lenghtAB + lenghtBC)
+        {
+            Console.WriteLine("Triangle IS 'Right'");
+        }
+        else
+        {
+            Console.WriteLine("Triangle IS NOT 'Right'");
+        }
+
+        double perimeter = lenghtAB + lenghtAC + lenghtBC;
+
+        Console.WriteLine($"\nPerimeter: '{perimeter}'");
+
+        Console.WriteLine("\nParity of the numbers in rage from 0 to triangle perimeter:");
+        for (int i = 0; i < perimeter; i++)
+        {
+            if (i % 2  == 0)
+            {   
+                Console.WriteLine(i);
+            }
+        }
+
     }
-    
-}
 
-public class Calculator : Perimeter
-{
-    public void SumCalculator()
-    {
-        double A = dotAx + dotAy;
-        double B = dotBx + dotBy;
-        double C = dotCx + dotCy;
-        
-        Console.WriteLine($"Dot A {A}, Dot B {B}, Dot C {C}.");
-    }
+   
 
-
-    
 }
 
