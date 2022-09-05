@@ -44,40 +44,17 @@ public class Triangle
             Console.WriteLine("Triangle IS 'Scalene'");
         }
 
-        //Checks if the triangle is right using Pythagoras theorem a2 + b2 = c2
-        if (lenghtAB >= lenghtBC || lenghtAB >= lenghtAC)
+        //Checks if the triangle is right
+        double delta = 0.01;
+        
+        if (lenghtBC * lenghtBC - (lenghtAB * lenghtAB + lenghtAC * lenghtAC) <= delta )
         {
-            if (lenghtBC + lenghtAC == lenghtAB)
-            {
-                Console.WriteLine("Triangle IS 'Right'");
-            }
-            else
-            {
-                Console.WriteLine("Triangle IS NOT 'Right'");
-            }
+            Console.WriteLine ("Triangle is 'Right'");
         }
-        else if (lenghtBC >= lenghtAB || lenghtBC >= lenghtAC) {
-            if (lenghtAB + lenghtAC == lenghtBC)
-            {
-                Console.WriteLine("Triangle IS 'Right'");
-            }
-            else
-            {
-                Console.WriteLine("Triangle IS NOT 'Right'");
-            }
-        }
-        else if (lenghtAC >= lenghtAB || lenghtAC >= lenghtBC)
+        else
         {
-            if (lenghtAB + lenghtBC == lenghtAC)
-            {
-                Console.WriteLine("Triangle IS 'Right Angled'");
-            }
-            else
-            {
-                Console.WriteLine("Triangle IS NOT 'Right Angled'");
-            }
+            Console.WriteLine ("Triangle is NOT 'Right'");
         }
-
 
         //Calculates the perimeter of the triangle
         double perimeter = lenghtAB + lenghtAC + lenghtBC;
