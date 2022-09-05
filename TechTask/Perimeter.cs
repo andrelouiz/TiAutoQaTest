@@ -45,15 +45,15 @@ public class Triangle
         }
 
         //Checks if the triangle is right
-        double delta = 0.01;
+        double delta = 0.001;
         
         if (lenghtBC * lenghtBC - (lenghtAB * lenghtAB + lenghtAC * lenghtAC) <= delta )
         {
-            Console.WriteLine ("Triangle is 'Right'");
+            Console.WriteLine ("Triangle IS 'Right'");
         }
         else
         {
-            Console.WriteLine ("Triangle is NOT 'Right'");
+            Console.WriteLine ("Triangle IS NOT 'Right'");
         }
 
         //Calculates the perimeter of the triangle
